@@ -29,13 +29,31 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 
+    `.for Each` will iterate through each element in an array, and return nothing
+    while `.map` will iterate through each element in an array, and return a new array, based on whatever you return in the callback function.
+
 2. Explain the difference between a callback and a higher order function.
+   
+    A callback function is sommething that is passed TO a higher-order function, while a higher-order
+    function is something that either RECEIVES a function as an argument or RETURNS a function.
 
 3. What is closure?
 
+    A closure is a function that has a function nested in it, and has access to variables in the scope it was created, even after being used.
+
 4. Describe the four rules of the 'this' keyword.
 
+    When `this` hasn't been given any context it will be in window binding mode, which means it will return the window object, or undefined if in strict mode.
+
+    When `this` is applied to objects in methods, it refers to the object to the left of the dot when the method is called.
+
+    When explicitly binded, we tell a func what `this` refers to, using `.call, .bind, .apply`.
+    `.call` will immediately invoke the function, and arguments are passed individually
+    `.bind` you pass arguments individually, and it will not immediately invoke the function.
+    `.apply` will immediately invoke the function, and pass arguments as an array,.
+
 5. Why do we need super() in an extended class?
+    `super()` will pass any arguments to the class that is being extended from, if you don't do this, then the constructor in the class you're extending from does not get useds.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
