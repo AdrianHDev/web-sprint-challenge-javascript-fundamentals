@@ -34,13 +34,11 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 function summation(int) {
   let counter = 0;
   for (let x = 0; x <= int; x++) {
-    console.log(x)
     counter+= x;
   }
   return counter
   }
 
-  console.log(summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -65,8 +63,12 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(animalArray){
+    const stringOfAnimals = [];
+    animalArray.forEach((animal) => {
+      stringOfAnimals.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`);
+    })
+    return stringOfAnimals
   }
   
 
@@ -76,8 +78,10 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(animalArray){
+    return animalArray.map((animal) => {
+      return animal.animal_name.toLowerCase();
+    })
   }
   
   
@@ -86,8 +90,12 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(animalArray){
+    return animalArray.filter((animal) => {
+      if (animal.population < 5 ){
+        return true;
+      }
+    })
   }
   
 
@@ -97,8 +105,8 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(animalArray){
+     return animalArray.reduce((acc, animal) => {return acc = acc + animal.population}, 0)
   }
   
   
@@ -110,8 +118,8 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb) {
+    return cb(a, b)
   }
  
   
